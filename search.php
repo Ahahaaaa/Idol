@@ -1,12 +1,11 @@
 <?php
-require_once("../../lib/util.php");
 $gobackURL = "searchform.html";
 
 // 文字エンコードの検証
-if (!cken($_POST)){
-  header("Location:{$gobackURL}");
-  exit();
-}
+// if (!cken($_POST)){
+//   header("Location:{$gobackURL}");
+//   exit();
+// }
 
 // nameが未設定、空のときはエラー
 if (empty($_POST)){
@@ -76,6 +75,7 @@ $dsn = "pgsql:host={$host};dbname={$dbName}";
         echo "<tr>";
         echo "<td>", $row['aidle_no'], "</td>";
         echo "<td>", $row['aidle_name'], "</td>";
+        echo "<td>", $row['aidle_birthday'],"</td>";
         echo "<td>", $row['aidle_age'], "</td>";
         echo "<td>", $row['aidle_from'], "</td>";
         echo "</tr>";

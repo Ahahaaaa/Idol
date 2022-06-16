@@ -46,7 +46,10 @@ $dsn="pgsql:host={$host};dbname={$dbName}"; //;charset=utf-8';
     echo "<th>", "誕生日", "</th>";
     echo "<th>", "年齢", "</th>";
     echo "<th>", "出身地", "</th>";
+    echo "<th>", "変更", "</th>";
+    echo "<th>", "削除", "</th>";
     echo "</tr></thead>";
+
     // 値を取り出して行に表示する
     echo "<tbody>";
     foreach ($result as $row){
@@ -54,12 +57,33 @@ $dsn="pgsql:host={$host};dbname={$dbName}"; //;charset=utf-8';
       echo "<tr>";
       echo "<td>", $row['aidle_no'], "</td>";
       echo "<td>", $row['aidle_name'], "</td>";
+      echo "<td>", $row['aidle_birth'], "</td>";
       echo "<td>", $row['aidle_age'], "</td>";
-      echo "<td>", $row['aidle_from'], "</td>";?>
-      <input type="text" name="name" placeholder="名前を入れてください。">
-<?php
-      echo "</tr>";
+      echo "<td>", $row['aidle_from'], "</td>"; ?>
+      <tr> 
+	<td>
+		<form action="update2.php" method="post">
+		<input type="submit" value="変更する">
+		<input type="hidden" name="id" value="<?=$row['aidle_no']?>">
+		</form>
+	</td>
+	<td>
+		<form action="delete2.php" method="post">
+		<input type="submit" value="削除する">
+		<input type="hidden" name="id" value="<?=$row['aidle_no']?>">
+		</form>
+	</td>
+    <td>
+		<form action="detail.php" method="post">
+		<input type="submit" value="詳細">
+		<input type="hidden" name="id" value="<?=$row['aidle_no']?>">
+		</form>
+	</td>
+</tr> 
+
+     <?php echo "</tr>";
     }
+    
     echo "</tbody>";
     echo "</table>";
   } catch (Exception $e) {
@@ -68,15 +92,8 @@ $dsn="pgsql:host={$host};dbname={$dbName}"; //;charset=utf-8';
     exit();
   }
   ?>
-  <form method="POST" action="search.php">
-    <ul>
-      <li>
-        <label>名前を検索します（部分一致）：<br>
-        <input type="text" name="name" placeholder="名前を入れてください。">
-        </label>
-      </li>
-      <li><input type="submit" value="検索する"></li>
-    </ul>
+  <form method="POST" action="insert_member.php">
+    <input type="submit" value="追加する">
   </form>
 </div>
 </body>

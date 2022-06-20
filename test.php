@@ -62,13 +62,13 @@ $dsn="pgsql:host={$host};dbname={$dbName}"; //;charset=utf-8';
       echo "<td>", $row['aidle_from'], "</td>"; ?>
       <tr> 
 	<td>
-		<form action="update2.php" method="post">
+		<form action="update.php" method="post">
 		<input type="submit" value="変更する">
 		<input type="hidden" name="id" value="<?=$row['aidle_no']?>">
 		</form>
 	</td>
 	<td>
-		<form action="delete2.php" method="post">
+		<form action="delete.php" method="post">
 		<input type="submit" value="削除する">
 		<input type="hidden" name="id" value="<?=$row['aidle_no']?>">
 		</form>

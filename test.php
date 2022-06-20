@@ -69,7 +69,8 @@ $dsn="pgsql:host={$host};dbname={$dbName}"; //;charset=utf-8';
 		</form>
 	</td>
 	<td>
-		<form action="delete.php" method="post">
+    
+		<form action="delete2.php" method="post">
 		<input type="submit" value="削除する">
 		<input type="hidden" name="id" value="<?=$row['aidle_no']?>">
 		</form>

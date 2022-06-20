@@ -8,6 +8,7 @@ $password ='Hara1215';
 $dbName='postgres';
 $host='localhost';
 
+$number = $_POST['number'];
 $name = $_POST['name'];
 $birth = $_POST['birth'];
 $age= $_POST['age'];
@@ -22,6 +23,10 @@ $from = $_POST['from'];
     }
     $sql = "INSERT INTO aidle(aidle_no, aidle_name, aidle_birth,aidle_age,aidle_from) VALUES(0,'".$name."','".$birth."',".$age.",'".$from."')";
     if ($stmt = $pdo->prepare($sql)) {
+<<<<<<< HEAD
+       
+=======
+>>>>>>> 63da3ef1e6024939ced50611b73b49bcd9abab7b
         $stmt->execute();
     }
 

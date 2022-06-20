@@ -9,6 +9,11 @@
 <body>
 <form method="post" action="sample.php">
 <ul>
+<li>
+        <label>番号：<br>
+        <input type="text" name="id" placeholder="番号を入れてください。">
+        </label>
+      </li>
       <li>
         <label>名前：<br>
         <input type="text" name="name" placeholder="名前を入れてください。">

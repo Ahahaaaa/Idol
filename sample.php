@@ -23,10 +23,10 @@ $from = $_POST['from'];
     }
     $sql = "INSERT INTO aidle(aidle_no, aidle_name, aidle_birth,aidle_age,aidle_from) VALUES(0,'".$name."','".$birth."',".$age.",'".$from."')";
     if ($stmt = $pdo->prepare($sql)) {
-        //$stmt->bindValue(':name', $name, PDO::PARAM_STR);
-        //$stmt->bindValue(':birth', $birth, PDO::PARAM_INT);
-        //$stmt->bindValue(':age', $age, PDO::PARAM_INT);
-        //$stmt->bindValue(':from', $from, PDO::PARAM_STR);
+<<<<<<< HEAD
+       
+=======
+>>>>>>> 63da3ef1e6024939ced50611b73b49bcd9abab7b
         $stmt->execute();
     }
 

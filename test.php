@@ -46,8 +46,6 @@ $dsn="pgsql:host={$host};dbname={$dbName}"; //;charset=utf-8';
     echo "<th>", "誕生日", "</th>";
     echo "<th>", "年齢", "</th>";
     echo "<th>", "出身地", "</th>";
-    echo "<th>", "変更", "</th>";
-    echo "<th>", "削除", "</th>";
     echo "</tr></thead>";
 
     // 値を取り出して行に表示する
@@ -59,12 +57,15 @@ $dsn="pgsql:host={$host};dbname={$dbName}"; //;charset=utf-8';
       echo "<td>", $row['aidle_name'], "</td>";
       echo "<td>", $row['aidle_birth'], "</td>";
       echo "<td>", $row['aidle_age'], "</td>";
-      echo "<td>", $row['aidle_from'], "</td>"; ?>
+      echo "<td>", $row['aidle_from'], "</td>";?>
+      <td><a href="edit.php?id=<?php echo $row['aidle_no']; ?>">編集</a></td>
++     <td><a href="delete.php?id=<?php echo $row['aidle_no']; ?>">削除</a> ?>
       <tr> 
 	<td>
-		<form action="update.php" method="post">
+		<form action="edit.php" method="post">
 		<input type="submit" value="変更する">
-		<input type="hidden" name="id" value="<?=$row['aidle_no']?>">
+    <input type="hidden" name="id" value="<?=$row['aidle_no']?>">
+		</form>
 		</form>
 	</td>
 	<td>
@@ -77,7 +78,6 @@ $dsn="pgsql:host={$host};dbname={$dbName}"; //;charset=utf-8';
     <td>
 		<form action="detail.php" method="post">
 		<input type="submit" value="詳細">
-		<input type="hidden" name="id" value="<?=$row['aidle_no']?>">
 		</form>
 	</td>
 </tr> 

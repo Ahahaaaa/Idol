@@ -8,11 +8,11 @@ $password ='Hara1215';
 $dbName='postgres';
 $host='localhost';
 
-// $number = $_POST['number'];
-$name = $_POST['name'];
-$birth = $_POST['birth'];
-$age= $_POST['age'];
-$from = $_POST['from'];
+$id = $_POST['aidle_no]'];
+$name = $_POST['aidle_name'];
+$birth = $_POST['aidle_birth'];
+$age= $_POST['aidle_age'];
+$from = $_POST['aidle_from'];
 
     try {
         $dsn="pgsql:host={$host};dbname={$dbName}";

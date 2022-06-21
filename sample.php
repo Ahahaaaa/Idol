@@ -8,7 +8,7 @@ $password ='Hara1215';
 $dbName='postgres';
 $host='localhost';
 
-$number = $_POST['number'];
+// $number = $_POST['number'];
 $name = $_POST['name'];
 $birth = $_POST['birth'];
 $age= $_POST['age'];

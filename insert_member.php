@@ -11,7 +11,7 @@
 <ul>
 <li>
         <label>番号：<br>
-        <input type="text" name="number" placeholder="番号を入れてください。">
+        <input type="integer" name="number" placeholder="番号を入れてください。">
         </label>
       </li>
       <li>

@@ -21,7 +21,7 @@ $from = $_POST['from'];
     } catch (PDOException $e) {
         die("接続に失敗しました" . $e->getMessage());
     }
-    $sql = "INSERT INTO aidle(aidle_no, aidle_name, aidle_birth,aidle_age,aidle_from) VALUES(0,'".$name."','".$birth."',".$age.",'".$from."')";
+    $sql = "INSERT INTO aidle(aidle_no, aidle_name, aidle_birth,aidle_age,aidle_from) VALUES(,'".$name."','".$birth."',".$age.",'".$from."')";
     if ($stmt = $pdo->prepare($sql)) {
         $stmt->execute();
     }

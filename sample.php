@@ -8,7 +8,7 @@ $password ='Hara1215';
 $dbName='postgres';
 $host='localhost';
 
-// $number = $_POST['number'];
+$number = $_POST['number'];
 $name = $_POST['name'];
 $birth = $_POST['birth'];
 $age= $_POST['age'];
@@ -21,7 +21,7 @@ $from = $_POST['from'];
     } catch (PDOException $e) {
         die("接続に失敗しました" . $e->getMessage());
     }
-    $sql = "INSERT INTO aidle(aidle_no, aidle_name, aidle_birth,aidle_age,aidle_from) VALUES(,'".$name."','".$birth."',".$age.",'".$from."')";
+    $sql = "INSERT INTO aidle(aidle_no, aidle_name, aidle_birth,aidle_age,aidle_from) VALUES(".$number.",'".$name."','".$birth."',".$age.",'".$from."')";
     if ($stmt = $pdo->prepare($sql)) {
         $stmt->execute();
     }

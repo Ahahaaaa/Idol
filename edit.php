@@ -4,10 +4,20 @@ $password ='Hara1215';
 $dbName='postgres';
 $host='localhost';
 
-$name = $_POST['name'];
-$birth = $_POST['birth'];
-$age= $_POST['age'];
-$from = $_POST['from'];
+// 結果が1行取得できたら
+if ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    $id = $row['id'];
+    $title = $row['title'];
+    $content = $row['content'];
+    <input type="hidden" name="id" value="<?php echo $id; ?>" >
+title:<br>
+<input type="text" name="title" id="title" style="width:200px;height:50px;" value=<?php echo $title; ?>><br>
+content:<br>
+<input type="text" name="content" id="content" style="width:200px;height:100px;" value=<?php echo $content; ?>><br>
+} else {
+    // 対象のidでレコードがない => 不正な画面遷移
+    echo "対象のデータがありません。";
+}
 
     try {
         $dsn="pgsql:host={$host};dbname={$dbName}";

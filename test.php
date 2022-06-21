@@ -59,8 +59,7 @@ $dsn="pgsql:host={$host};dbname={$dbName}"; //;charset=utf-8';
       echo "<td>", $row['aidle_age'], "</td>";
       echo "<td>", $row['aidle_from'], "</td>";?>
       <td><a href="edit.php?id=<?php echo $row['aidle_no']; ?>">編集</a></td>
-+     <td><a href="delete.php?id=<?php echo $row['aidle_no']; ?>">削除</a> ?>
-      <tr> 
++     <td><a href="delete.php?id=<?php echo $row['aidle_no']; ?>">削除</a> ?>  <tr> 
 	<td>
 		<form action="edit.php" method="post">
 		<input type="submit" value="変更する">

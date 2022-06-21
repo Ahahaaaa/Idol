@@ -74,6 +74,7 @@ $dsn="pgsql:host={$host};dbname={$dbName}"; //;charset=utf-8';
 	</td>
     <td>
 		<form action="detail.php" method="post">
+    <input type="hidden" name="id" value="<?=$row['aidle_no']?>">
 		<input type="submit" value="詳細">
 		</form>
 	</td>
